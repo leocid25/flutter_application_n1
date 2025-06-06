@@ -8,6 +8,7 @@ class PixCobrancaDTO {
   String? dataVencimento;
   String banco;
   String tipoCob;
+  int? validade;
   String? solicitacaoPagador;
 
   PixCobrancaDTO({
@@ -20,6 +21,7 @@ class PixCobrancaDTO {
     this.dataVencimento,
     required this.banco,
     required this.tipoCob,
+    this.validade,
     this.solicitacaoPagador,
   });
 
@@ -33,6 +35,7 @@ class PixCobrancaDTO {
         'dataVencimento': dataVencimento,
         'banco': banco,
         'tipoCob': tipoCob,
+        'validadeAposVencimento': validade,
         'solicitacaoPagador': solicitacaoPagador,
       };
 }

@@ -5,6 +5,8 @@ import '../screens/pagamento_form_screen.dart';
 import '../screens/consulta_cobranca_screen.dart';
 import '../screens/qrcode_generator_screen.dart';
 import '../screens/pagamento_pix_screen.dart';
+import '../screens/lista_cobranca_periodo_screen.dart';
+import '../screens/lista_cobranca_vencida_screen.dart';
 import '../models/pix_pagamento_response_dto.dart';
 
 class AppRoutes {
@@ -14,6 +16,8 @@ class AppRoutes {
   static const String pagarCobranca = '/pagar-cobranca';
   static const String consultarCobranca = '/consultar-cobranca';
   static const String gerarQRCode = '/gerar-qrcode';
+  static const String listarCobrancasPorPeriodo = '/listar-cobrancas-periodo';
+  static const String listarCobrancasVencidas = '/listar-cobrancas-vencidas';
   static const String pagamentoConfirmado = '/pagamento-confirmado';
 
   // Mapa de rotas
@@ -31,6 +35,8 @@ class AppRoutes {
         }
         return QRCodeGeneratorScreen(txidInicial: txidInicial);
       },
+      listarCobrancasPorPeriodo: (context) => const ListarCobrancaPeriodoScreen(),
+      listarCobrancasVencidas: (context) => const ListarCobrancaVencidaScreen(),
       pagamentoConfirmado: (context) {
         final resposta = ModalRoute.of(context)!.settings.arguments;
         if (resposta == null) {

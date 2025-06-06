@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'routes/app_routes.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'; 
 import 'utils/error_handler.dart';
 
 void main() {
@@ -29,6 +30,19 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      
+      // ← CONFIGURAÇÕES DE LOCALIZAÇÃO ADICIONADAS:
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('pt', 'BR'),  // Português do Brasil
+        Locale('en', 'US'),  // Inglês (fallback)
+      ],
+      locale: const Locale('pt', 'BR'),  // Define português como padrão
+      
       // Configuração de rotas nomeadas
       initialRoute: AppRoutes.menu,
       routes: AppRoutes.routes,
